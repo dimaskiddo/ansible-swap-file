@@ -1,0 +1,4 @@
+- hosts: servers
+  any_errors_fatal: true
+  roles:
+    - role: swapfile
