@@ -1,0 +1,14 @@
+- name: Activate Swap File
+  shell: swapon {{ swap_file_name }}
+  warn: no
+
+- name: Set Swap File Activation at Startup
+  mount:
+    src: "{{ swap_file_name }}"
+    path: swap
+    fstype: swap
+    opts: defaults
+    passno: 0
+    dump: 0
+    state: present
+    backup: yes

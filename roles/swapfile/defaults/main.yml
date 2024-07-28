@@ -1,0 +1,6 @@
+---
+# Default for Swap File Name
+swap_file_name: '/swapfile'
+
+# Default for Swap File Size
+swap_file_size: '2G'

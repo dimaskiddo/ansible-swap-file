@@ -1,0 +1,6 @@
+---
+- name: Set fallback value for if distribution is not defined
+  set_fact:
+    ansible_distribution: '{{ ansible_lsb["id"] }}'
+  when:
+    - ansible_distribution is not defined

@@ -1,0 +1,6 @@
+---
+- include: swapfile_block.yml
+
+- include: swapfile_mount.yml
+
+- include: swapfile_sysctl.yml
