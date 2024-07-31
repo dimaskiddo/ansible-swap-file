@@ -35,6 +35,15 @@
     reload: no
     state: present
 
+- name: Set Sysctl for 'vm.vfs_cache_pressure'
+  sysctl:
+    name: vm.vfs_cache_pressure
+    value: "50"
+    sysctl_file: /etc/sysctl.conf
+    sysctl_set: yes
+    reload: no
+    state: present
+
 - name: Set Sysctl for 'vm.swappiness'
   sysctl:
     name: vm.swappiness
