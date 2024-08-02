@@ -1,3 +1,4 @@
+---
 - name: Create Swap File
   command: fallocate -l {{ swap_file_size }} {{ swap_file_name }}
   when:
