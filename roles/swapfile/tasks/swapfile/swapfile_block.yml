@@ -1,6 +1,7 @@
 - name: Create Swap File
-  shell: fallocate -l {{ swap_file_size }} {{ swap_file_name }}
-  warn: no
+  command: fallocate -l {{ swap_file_size }} {{ swap_file_name }}
+  when:
+    - not swap_file_exists
 
 - name: Set Swap File Permission
   file:
@@ -11,5 +12,6 @@
     state: file
 
 - name: Format Swap File
-  shell: mkswap {{ swap_file_name }}
-  warn: no
+  command: mkswap {{ swap_file_name }}
+  when:
+    - not swap_file_exists

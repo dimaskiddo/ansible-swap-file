@@ -4,3 +4,12 @@
     ansible_distribution: '{{ ansible_lsb["id"] }}'
   when:
     - ansible_distribution is not defined
+
+- name: Check if Swap File already exist
+  stat:
+    path: "{{ swap_file_name }}"
+  register: swap_file_check
+
+- name: Set fact if Swap File already exist
+  set_fact:
+    swap_file_exists: "{{ swap_file_check.stat.exists }}"

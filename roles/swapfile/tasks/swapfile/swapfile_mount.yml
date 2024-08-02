@@ -1,6 +1,5 @@
 - name: Activate Swap File
-  shell: swapon {{ swap_file_name }}
-  warn: no
+  command: swapon {{ swap_file_name }}
 
 - name: Set Swap File Activation at Startup
   mount:
